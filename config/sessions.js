@@ -9,7 +9,7 @@ const sessionConfig = {
   saveUninitialized: false,
   cookie: {
     maxAge: 259200000,
-    secure: process.env.NODE_ENV === "production"?true:false
+    secure: false
   },
   store: new MongoStore({
     uri: process.env.MONGO_URI,
