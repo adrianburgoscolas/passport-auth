@@ -51,17 +51,17 @@ passport.use(new GoogleStrategy({
       console.log(err);
       return done(null, false);
     }
-    if(!user) {
-      const newUser = new User({name: profile.displayName, password: "", provider: issuer});
-      newUser.save((err, user) => {
-        if(err) {
-          console.log(err);
-          return done(null, false);
-        }
-        return done(null, user);
-      });
+    if(user) {
+      return done(null, user);
     }
-    return done(null, user);
+    const newUser = new User({name: profile.displayName, password: "", provider: issuer});
+    newUser.save((err, user) => {
+      if(err) {
+        console.log(err);
+        return done(null, false);
+      }
+      return done(null, user);
+    });
   });
 }));
 
