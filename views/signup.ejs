@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Auth | Signup</title>
+  </head>
+  <style>
+    label {
+      display: block;
+    }
+    div {
+      width: 13rem;
+    }
+    a {
+      display: block;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <main>
+      <header>
+        <h1>Hello Auth | Signup</h1>
+      </header>
+      <div>
+        <form action="/register" method="post">
+          <section>
+            <label for="username">User</label>
+            <input type="text" name="username" id="username" autocomplete="username" autofocus required>
+          </section>
+          <section>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" autocomplete="password" required>
+          </section>
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
