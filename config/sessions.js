@@ -3,6 +3,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongodb-session")(session);
 
 const sessionConfig = {
+  //cookie name
   name: "server.id",
   secret: process.env.SESSION_KEY,
   resave: false,

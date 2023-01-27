@@ -8,6 +8,7 @@ const db = require("./db/connect");
 const mainRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const sessionConfig = require("./config/sessions");
+const notFound = require("./middleware/notfound");
 
 const app = express();
 
@@ -25,6 +26,8 @@ app.set("view engine", "ejs");
 
 app.use("/", mainRouter);
 app.use("/", authRouter);
+
+app.use(notFound);
 
 const port = process.env.PORT || 3001;
 
